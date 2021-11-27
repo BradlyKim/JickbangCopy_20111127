@@ -11,7 +11,7 @@ import java.util.ArrayList
 
 class RoomAdapter(
     val mContext: Context,
-    val resId: Int,
+    resId: Int,
     val mList: ArrayList<RoomData>
 ) : ArrayAdapter<RoomData>(mContext, resId, mList) {
 
