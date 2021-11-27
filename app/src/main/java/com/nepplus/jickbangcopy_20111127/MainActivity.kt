@@ -17,6 +17,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+//        ArrayList의 add 기능 활용
         mRoomList.add( RoomData(8000, "서울시 동대문구", 5, "1번째 방입니다."))
         mRoomList.add( RoomData(10000, "서울시 동대문구", 10, "2번째 방입니다.") )
         mRoomList.add( RoomData(5000, "서울시 동대문구", 0, "3번째 방입니다.") )
