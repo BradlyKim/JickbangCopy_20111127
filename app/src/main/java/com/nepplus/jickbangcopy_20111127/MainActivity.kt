@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 //    변수는 멤버변수로 -> 대입은 onCreate{} (나중에) : lateinit var
     lateinit var mRoomAdapter: RoomAdapter
 
-
+//      실제 방 데이터들 추가
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
