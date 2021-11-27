@@ -16,9 +16,38 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setupEvents()
+        setValues()
 
 
-//        ArrayList의 add 기능 활용
+
+
+
+
+
+
+
+    }
+
+    fun setupEvents() {
+
+//        이벤트 처리 관련 코드를 모아두는 함수
+        roomListView.setOnItemClickListener { adapterView, view, position, l ->
+
+            val clickedRoom = mRoomList[position]
+
+            val myIntent = Intent( this, ViewRoomDetailActivity::class.java )
+            myIntent.putExtra("room", clickedRoom)
+            startActivity( myIntent )
+
+
+        }
+
+
+    }
+
+    fun setValues() {
+//        화면에 뭔가 보여주기 위한 코드를 모아두는 함수
         mRoomList.add( RoomData(8000, "서울시 동대문구", 5, "1번째 방입니다."))
         mRoomList.add( RoomData(10000, "서울시 동대문구", 10, "2번째 방입니다.") )
         mRoomList.add( RoomData(5000, "서울시 동대문구", 0, "3번째 방입니다.") )
@@ -34,18 +63,7 @@ class MainActivity : AppCompatActivity() {
         mRoomAdapter = RoomAdapter( this, R.layout.room_list_item, mRoomList )
         roomListView.adapter = mRoomAdapter
 
-        roomListView.setOnItemClickListener { adapterView, view, position, l ->
-
-            val clickedRoom = mRoomList[position]
-
-            val myIntent = Intent( this, ViewRoomDetailActivity::class.java )
-            myIntent.putExtra("room", clickedRoom)
-            startActivity( myIntent )
-
-
-        }
-
-
-
     }
+
 }
+

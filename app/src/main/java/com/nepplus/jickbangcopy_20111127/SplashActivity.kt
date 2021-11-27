@@ -17,7 +17,7 @@ class SplashActivity : AppCompatActivity() {
 
         myHandler.postDelayed( {
 
-//               2.5초뒤에 실행할 일 : 메인화면으로 이동하기
+//        2.5초뒤에 실행할 일 : 메인화면으로 이동하기
 
         val myIntent = Intent(this, MainActivity::class.java)
         startActivity(myIntent)
